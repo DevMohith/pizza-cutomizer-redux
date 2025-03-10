@@ -1,68 +1,112 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* 🎨 Global Styles */
 body {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  background-color: #f8f8f8;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  color: #ff4500;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* 🍕 Pizza Selection */
+.pizza-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.pizza-button {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  margin: 5px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.pizza-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to right, #ff4500, #ff7e5f);
+}
+
+/* ✅ Selected Pizza */
+.selected {
+  background: linear-gradient(to right, #32cd32, #66ff66) !important;
+  box-shadow: 0px 0px 10px rgba(50, 205, 50, 0.7);
+}
+
+/* 🍕 Toppings Section */
+.toppings-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.topping-button {
+  background: linear-gradient(to right, #4b79a1, #283e51);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.topping-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+}
+
+/* ✅ Selected Topping */
+.topping-selected {
+  background: linear-gradient(to right, #ffcc00, #ff9900) !important;
+  box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.7);
+}
+
+/* 🛒 Order Summary */
+.order-summary {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.order-summary h2 {
+  color: #2c3e50;
+}
+
+.order-summary p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* 💫 Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  a:hover {
-    color: #747bff;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+.animated {
+  animation: fadeIn 0.5s ease-in-out;
 }

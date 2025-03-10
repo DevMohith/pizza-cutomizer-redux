@@ -5,8 +5,8 @@ const OrderSummary = () => {
   const { selectedPizza, toppings } = useSelector((state) => state.pizza);
 
   return (
-    <div>
-      <h2>Order Summary</h2>
+    <div className="order-summary animated">
+      <h2>🛒 Order Summary</h2>
       {selectedPizza ? (
         <>
           <p><strong>Pizza:</strong> {selectedPizza}</p>

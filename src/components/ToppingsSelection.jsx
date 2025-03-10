@@ -11,24 +11,23 @@ const ToppingsSelection = () => {
 
   return (
     <div>
-      <h2>Select Toppings</h2>
+      <h2>🥗 Select Toppings</h2>
       {selectedPizza ? (
-        toppings.map((topping) => (
-          <button
-            key={topping}
-            onClick={() =>
-              selectedToppings.includes(topping)
-                ? dispatch(removeTopping(topping))
-                : dispatch(addTopping(topping))
-            }
-            style={{
-              margin: "5px",
-              backgroundColor: selectedToppings.includes(topping) ? "green" : "white",
-            }}
-          >
-            {topping}
-          </button>
-        ))
+        <div className="toppings-container">
+          {toppings.map((topping) => (
+            <button
+              key={topping}
+              className={`topping-button ${selectedToppings.includes(topping) ? "topping-selected" : ""}`}
+              onClick={() =>
+                selectedToppings.includes(topping)
+                  ? dispatch(removeTopping(topping))
+                  : dispatch(addTopping(topping))
+              }
+            >
+              {topping}
+            </button>
+          ))}
+        </div>
       ) : (
         <p>Please select a pizza first.</p>
       )}

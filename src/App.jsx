@@ -2,6 +2,7 @@ import React from "react";
 import PizzaSelection from "./components/PizzaSelection";
 import ToppingsSelection from "./components/ToppingsSelection";
 import OrderSummary from "./components/OrderSummary";
+import "./index.css"; // ✅ Import the global styles
 
 const App = () => {
   return (

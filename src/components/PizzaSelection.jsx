@@ -10,19 +10,18 @@ const PizzaSelection = () => {
 
   return (
     <div>
-      <h2>Hey Buddy, Select Your Pizza</h2>
-      {pizzas.map((pizza) => (
-        <button
-          key={pizza}
-          onClick={() => dispatch(selectPizza(pizza))}
-          style={{
-            margin: "5px",
-            backgroundColor: selectedPizza === pizza ? "yellow" : "white",
-          }}
-        >
-          {pizza}
-        </button>
-      ))}
+      <h2>🍕 Select Your Pizza 🍕</h2>
+      <div className="pizza-container">
+        {pizzas.map((pizza) => (
+          <button
+            key={pizza}
+            className={`pizza-button ${selectedPizza === pizza ? "selected" : ""}`}
+            onClick={() => dispatch(selectPizza(pizza))}
+          >
+            {pizza}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
